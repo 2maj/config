@@ -8,6 +8,28 @@
 ## controller
 -  bin/console make:controller
 
+## Database creation
+- In the file .env set the variable :
+> DATABASE_URL=mysql://root:@127.0.0.1:3306/your-database-name
+- Run the following cmd to create your database:
+> php bin/console doctrine:databse:create
+- **If you have already your tables then you'd like upload in your database** run the new cmd:
+>  php bin/console doctrine:migrations:migrate
+- **If you have already your datas then you'd like upload in your tables** run the new cmd:
+> php bin/console doctrine:fixturesload --no-interaction
+
+## Database create table
+- Create your table/entity your should run the following cmd :
+> php bin/console make:entity Your-table-name
+- Add the table's fields with their constraints
+    - If the field is foreign key then the type of field will be **relation**
+    - Precise the **class of your foreign key**
+    - Add the cardinality/relation's type
+    > OneToOne, OneToMany ...
+- Before to upload your table you database run the next code. It will prepare your migration:
+> php bin/console doctrine:migration
+
+
 ## Routes custom
 - delete annotation from config/routes/annotations.yaml
 - create folder :
