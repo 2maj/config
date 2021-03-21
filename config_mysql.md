@@ -14,7 +14,10 @@ This utility prompts you to define the mysql root password and other security-re
 > sudo mysql_secure_installation utility
 
 # Launch
-With your preview password saved, you can log in mysql
+With your preview password saved, you can log in mysql.
+If you used sudo during your installation 
+>sudo mysql -u root -p
+else
 >mysql -u root -p
 
 #Create new user
