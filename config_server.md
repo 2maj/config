@@ -33,3 +33,6 @@
 		> eval "$(ssh-agent -s)"
 	- Add priavte ssh key to the agent:
 		> ssh-add ~/.ssh/id_rsa
+##Switch php version
+> sudo update-alternatives --config php
+> sudo service apache2 restart
